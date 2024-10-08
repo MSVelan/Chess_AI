@@ -2,6 +2,8 @@
 
 This project is a chess game implemented in Python using Pygame for the graphical user interface (GUI) and includes a basic AI opponent (depth can be adjusted). The AI uses a decision-making algorithm for move prediction, running in a separate process from the user interface to keep the UI responsive during gameplay.
 
+![Screenshot](https://github.com/MSVelan/Chess_AI/blob/main/Chess/Game_screenshot.png)
+
 ## Table of Contents
 
 - [Features](#features)
