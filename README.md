@@ -125,5 +125,5 @@ These algorithms provide progressively more sophisticated ways of finding the be
 
 ## Project Recording
 
-You can watch the project recording on [here](https://drive.google.com/link-to-your-video).
+You can watch the project recording on [here](https://github.com/MSVelan/Chess_AI/blob/main/Chess/pjt_recording-1.mkv).
 
