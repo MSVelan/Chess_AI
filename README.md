@@ -2,17 +2,28 @@
 
 This project is a chess game implemented in Python using Pygame for the graphical user interface (GUI) and includes a basic AI opponent (depth can be adjusted). The AI uses a decision-making algorithm for move prediction, running in a separate process from the user interface to keep the UI responsive during gameplay.
 
-![Screenshot](https://github.com/MSVelan/Chess_AI/blob/main/Chess/Game_screenshot.png)
+![Screenshot](https://github.com/MSVelan/Chess_AI/blob/main/assets/Game_screenshot.png)
 
 ## Table of Contents
 
-- [Features](#features)
-- [Technologies](#technologies)
-- [Project Structure](#project-structure)
-- [How to Run](#how-to-run)
-- [How the AI Works](#how-the-ai-works)
-- [Future Improvements](#future-improvements)
-- [Project Recording](#project-recording)
+- [Chess AI with Pygame](#chess-ai-with-pygame)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Technologies](#technologies)
+  - [Project Structure](#project-structure)
+  - [How to run](#how-to-run)
+    - [Development](#development)
+    - [Creating the binary/executable:](#creating-the-binaryexecutable)
+    - [Installing as a library](#installing-as-a-library)
+  - [How the AI works](#how-the-ai-works)
+  - [How the AI Finds the Best Move](#how-the-ai-finds-the-best-move)
+    - [1. Simple Greedy Method](#1-simple-greedy-method)
+    - [2. Minimax Algorithm](#2-minimax-algorithm)
+    - [3. NegaMax Algorithm](#3-negamax-algorithm)
+    - [4. NegaMax Algorithm with Alpha-Beta Pruning](#4-negamax-algorithm-with-alpha-beta-pruning)
+    - [Summary of Algorithms](#summary-of-algorithms)
+  - [Future improvement](#future-improvement)
+  - [Project Recording](#project-recording)
 
 ## Features
 - **Multiprocessing**: The UI is implemented as a separate process where 
@@ -31,17 +42,19 @@ This project is a chess game implemented in Python using Pygame for the graphica
 
 ## Project Structure
 
-- **images**: Directory containing all images of chess pieces
-- **ChessEngine.py**: Implemented the chess game by maintaining the game state, implements various features such as undo move, en passant, etc.
-- **SmartMoveFinder.py**: Implemented the logic for predicting moves, tried various algorithms such as greedy, min-max, nega max, nega max with alpha beta pruning
-- **ChessMain.py**: Integrated the ChessEngine.py and SmartMoveFinder.py files and created the UI using pygame, multiprocessing.
+- **assets**: Directory containing sample recording and screenshot of the game 
+- **Chess/images**: Directory containing all images of chess pieces
+- **Chess/ChessEngine.py**: Implemented the chess game by maintaining the game state, implements various features such as undo move, en passant, etc.
+- **Chess/SmartMoveFinder.py**: Implemented the logic for predicting moves, tried various algorithms such as greedy, min-max, nega max, nega max with alpha beta pruning
+- **Chess/ChessMain.py**: Integrated the ChessEngine.py and SmartMoveFinder.py files and created the UI using pygame, multiprocessing.
 
 ## How to run
+
+### Development
 
 - Clone the github repository
 ```bash
 git clone git@github.com:MSVelan/Chess_AI.git
-cd Chess
 ```
 
 - Ensure dependencies are installed
@@ -49,9 +62,38 @@ cd Chess
 pipenv shell
 ```
 
-- Run the game
+### Creating the binary/executable:
+
 ```bash
-python3 ChessMain.py
+git clone git@github.com:MSVelan/Chess_AI.git
+```
+
+```bash
+pip install pyinstaller
+pyinstaller --onefile --add-data "Chess/images:Chess/images" --name ChessMain Chess/ChessMain.py
+./dist/ChessMain
+```
+### Installing as a library
+
+Download dist/chess_bot-1.0-py3-none-any.whl or dist/chess_bot-1.0.tar.gz
+
+```bash
+cd /path/to/downloaded/files
+```
+
+```bash
+pip install chess_bot-1.0-py3-none-any.whl
+```
+
+or 
+
+```bash
+pip install chess_bot-1.0.tar.gz
+```
+Run by:
+
+```bash
+chess-bot
 ```
 
 ## How the AI works
@@ -121,11 +163,12 @@ These algorithms provide progressively more sophisticated ways of finding the be
 ## Future improvement
 
 - I want to convert this app into a website where the UI is handled by the client and the server handles the move generation for the AI bot.
-- Add multithreading to make the app faster.
+- Add multiprocessing for valid move generation to make the app faster.
+- Improve the AI by adding more algorithms
 - Allow User to save their game progress and add authentication for each user.
 - Introduce difficulty mode by adjusting depth values and add an UI for this functionality.
 
 ## Project Recording
 
-You can watch the project recording on [here](https://github.com/MSVelan/Chess_AI/blob/main/Chess/pjt_recording-1.mkv).
+You can watch the project recording on [here](https://github.com/MSVelan/Chess_AI/blob/main/assets/pjt_recording-1.mkv).
 
