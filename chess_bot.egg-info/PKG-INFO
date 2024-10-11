@@ -1,0 +1,7 @@
+Metadata-Version: 2.1
+Name: chess_bot
+Version: 1.0
+Requires-Dist: pygame
+Requires-Dist: toml
+Requires-Dist: setuptools
+Requires-Dist: wheel
