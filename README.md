@@ -22,7 +22,8 @@ This project is a chess game implemented in Python using Pygame for the graphica
     - [3. NegaMax Algorithm](#3-negamax-algorithm)
     - [4. NegaMax Algorithm with Alpha-Beta Pruning](#4-negamax-algorithm-with-alpha-beta-pruning)
     - [Summary of Algorithms](#summary-of-algorithms)
-  - [Future improvement](#future-improvement)
+  - [Future improvements](#future-improvements)
+    - [Optional (Web interface)](#optional-web-interface)
   - [Project Recording](#project-recording)
 
 ## Features
@@ -160,13 +161,21 @@ Alpha-Beta Pruning doesn’t affect the result of the NegaMax algorithm; it just
 These algorithms provide progressively more sophisticated ways of finding the best move, with NegaMax and Alpha-Beta Pruning offering a balance between decision depth and computational efficiency.
 
 
-## Future improvement
+## Future improvements
 
-- I want to convert this app into a website where the UI is handled by the client and the server handles the move generation for the AI bot.
+- Use cython to make the app faster.
+- Convert python files to mojo files which will also drastically reduce the runtime.
 - Add multiprocessing for valid move generation to make the app faster.
 - Improve the AI by adding more algorithms
-- Allow User to save their game progress and add authentication for each user.
-- Introduce difficulty mode by adjusting depth values and add an UI for this functionality.
+- Benchmark the app based on nodes per second(nps), time per move, memory usage, depth per second(dps)
+- Add time control formats
+- Measure elo rating of the chess bot.
+
+### Optional (Web interface)
+
+- Convert this app into a website where the UI is handled by the client and the server handles the move generation for the AI bot.
+- Allow User to save their game progress and add authentication for each user if adding the web functionality.
+- Introduce difficulty mode by adjusting depth values and add an UI for this functionality in both the current version of app and web functionality.
 
 ## Project Recording
 
